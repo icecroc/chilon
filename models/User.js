@@ -10,6 +10,15 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+  fName: {
+    type: String
+  },
+  lName: {
+    type: String
+  },
+  perms: {
+    type: String
   }
 })
 

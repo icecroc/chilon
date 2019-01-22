@@ -1,6 +1,9 @@
 export interface User {
   email: string
   password: string
+  fName?: string
+  lName?: string
+  perms?: string
 }
 
 export interface Message {
@@ -24,6 +27,7 @@ export interface Position {
 
 export interface Order {
   date?: Date
+  endDate?: Date
   order?: number
   user?: string
   list: OrderPosition[]

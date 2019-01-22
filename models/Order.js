@@ -6,12 +6,22 @@ const orderSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  endDate: {
+    type: Date
+  },
   order: {
     type: Number,
     required: true
   },
   userName: {
     type: String,
+  },
+  endUserName: {
+    type: String
+  },
+  isActive: {
+    type: Boolean,
+    default: true
   },
   list: [
     {

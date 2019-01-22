@@ -52,12 +52,32 @@ module.exports.create = async function(req, res) {
 
     const order = await new Order({
       list: req.body.list,
-      user: req.user.id,
+      user: req.user,
       userName: req.user.email,
       order: maxOrder + 1
     }).save()
 
     res.status(201).json(order)
+  } catch (e) {
+    errorHandler(res, e)
+  }
+}
+
+module.exports.update = async function(req, res) {
+  const updated = {
+    endDate : Date.now,
+    endUserName : req.user.email,
+    isActive : false,
+    list : req.body.list
+  }
+
+  try {
+    const order = await Order.findOneAndUpdate(
+      {_id: req.params.id},
+      {$set: updated},
+      {new: true},
+      res.status(200).json(order)
+    )
   } catch (e) {
     errorHandler(res, e)
   }

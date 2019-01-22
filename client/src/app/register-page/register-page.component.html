@@ -39,7 +39,53 @@
         </span>
       </span>
     </div>
+  
+  <div class="input-field">
+    <input
+      formControlName="fName"
+      id="fName"
+      type="text"
+      [ngClass]="{'invalid': form.get('fName').invalid && form.get('fName').touched}"
+    >
+    <label for="fName">Имя :</label>
+    <span
+      class="helper-text red-text"
+      *ngIf="form.get('fName').invalid && form.get('fName').touched"
+    >
+      <span *ngIf="form.get('fName').errors['required']">Имя не может быть пустым</span>
+    </span>
   </div>
+  <div class="input-field">
+    <input
+      formControlName="lName"
+      id="lName"
+      type="text"
+      [ngClass]="{'invalid': form.get('lName').invalid && form.get('lName').touched}"
+    >
+    <label for="lName">Фамилия :</label>
+    <span
+      class="helper-text red-text"
+      *ngIf="form.get('lName').invalid && form.get('lName').touched"
+    >
+      <span *ngIf="form.get('lName').errors['required']">Фамилия не может быть пустой</span>
+    </span>
+  </div>
+  <div class="input-field">
+    <input
+      formControlName="perms"
+      id="perms"
+      type="text"
+      [ngClass]="{'invalid': form.get('perms').invalid && form.get('perms').touched}"
+    >
+    <label for="perms">Тип пользователя :</label>
+    <span
+      class="helper-text red-text"
+      *ngIf="form.get('perms').invalid && form.get('perms').touched"
+    >
+      <span *ngIf="form.get('perms').errors['required']">Тип не должен быть пустым</span>
+    </span>
+  </div>
+</div>
   <div class="card-action">
     <button
       type="submit"
