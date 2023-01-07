@@ -14,7 +14,7 @@
     "express",
     "angular"
   ],
-  "author": "Vladilen Minin",
+  "author": "Baryshev Alexander",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
